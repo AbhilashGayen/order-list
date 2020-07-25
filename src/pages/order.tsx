@@ -1,8 +1,11 @@
 import React from "react";
 import Layout from "../components/layout";
+import PageHeading from "../components/pageHeading";
 
-const OrderPage = () => {
-  return <Layout></Layout>;
-};
+const OrderPage = () => (
+  <Layout>
+    <PageHeading />
+  </Layout>
+);
 
 export default OrderPage;
