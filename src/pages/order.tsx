@@ -1,12 +1,20 @@
 import React from "react";
-import Layout from "../components/layout";
-import PageHeading from "../components/pageHeading";
+
+//Context
 import DataContextProvider from "../utils/dataContext";
+
+//Layout
+import Layout from "../components/layout";
+
+//Components
+import PageHeading from "../components/pageHeading";
+import OrderTabs from "../components/orderTable/orderTabs";
 
 const OrderPage = () => (
   <Layout>
+    <PageHeading />
     <DataContextProvider>
-      <PageHeading />
+      <OrderTabs />
     </DataContextProvider>
   </Layout>
 );
