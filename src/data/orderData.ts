@@ -1,4 +1,4 @@
-export const orderData = [
+export const OrderData = [
     {
       order_id: 763073,
       created_date: "24/07/2020",
