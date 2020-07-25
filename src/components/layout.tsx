@@ -1,8 +1,5 @@
 import React from "react";
 
-//Components
-import Header from "./header/header";
-
 //Styles
 import styled from "@emotion/styled";
 
@@ -21,7 +18,7 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Header />
+      
       <LayoutContainer>
         <div>{children}</div>
       </LayoutContainer>
