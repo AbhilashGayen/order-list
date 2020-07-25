@@ -4,7 +4,7 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import { DataContext } from "../../utils/dataContext";
 
 //Style imports
-import { Checkbox, Select, Text, Avatar } from "@chakra-ui/core";
+import { Checkbox, Select, Text, Avatar, Heading } from "@chakra-ui/core";
 import { RowContainer, Cell } from "../../styles/orderStyles";
 
 //Local Interface
@@ -24,6 +24,7 @@ const StatusSelector = (props: any) => {
   );
   const statusSelector = useRef() as React.MutableRefObject<HTMLSelectElement>;
 
+  //update background and value on user selection
   const changeStatus = () => {
     let selectedStatus = statusSelector.current.value;
     setStatus(selectedStatus);
@@ -44,7 +45,6 @@ const StatusSelector = (props: any) => {
     </Select>
   );
 };
-
 
 //set fulfillment value and background
 //returns Select Component for fulfillment
@@ -80,6 +80,7 @@ const FulfilmentSelector = (props: any) => {
     setbgcolor(bgcode);
   };
 
+  //update background and value on user selection
   const changeFulfillment = () => {
     let selectedFulfillment = fulfillmentSelector.current.value;
     setStatus(selectedFulfillment);
@@ -110,7 +111,11 @@ const InvoiceFormatter = (props: any) => {
   const invoiceLast = invoiceId.slice(3, 6);
   const formattedInvoiceId = invoiceFirst + " " + invoiceLast;
 
-  return <Text fontSize="lg">{formattedInvoiceId}</Text>;
+  return (
+    <Heading as="h6" color="blue.500" size="md">
+      {formattedInvoiceId}
+    </Heading>
+  );
 };
 
 //Compare date with current date and return today/yesterday
