@@ -14,7 +14,7 @@ const LayoutContainer = styled.div`
 
 //Interface
 interface Props {
-  children: any;
+  children: React.ReactNode;
 }
 
 //Page Layout
