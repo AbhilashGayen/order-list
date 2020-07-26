@@ -1,4 +1,10 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, {
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+} from "react";
 
 //Context
 import { DataContext } from "../../utils/dataContext";
@@ -21,10 +27,13 @@ export const useData = () => useContext(DataContext);
 //Set status value and background
 //returns Select Component for status
 const StatusSelector = (props: any) => {
+  //set intital states
   const [status, setStatus] = useState(props.status);
   const [bgcolor, setbgcolor] = useState(
     status === "Paid" ? "#39C38E" : "#FEA801"
   );
+
+  //add reference
   const statusSelector = useRef() as React.MutableRefObject<HTMLSelectElement>;
 
   //update background and value on user selection
@@ -34,6 +43,7 @@ const StatusSelector = (props: any) => {
     setbgcolor(selectedStatus === "Paid" ? "#39C38E" : "#FEA801");
   };
 
+  //status dropdown element
   return (
     <Select
       backgroundColor={bgcolor}
@@ -52,44 +62,47 @@ const StatusSelector = (props: any) => {
 //set fulfillment value and background
 //returns Select Component for fulfillment
 const FulfilmentSelector = (props: any) => {
-  let bgcode: string = "#39C38E";
-
+  //set initial state
   const [fulfillment, setStatus] = useState(props.fulfillment);
-  const [bgcolor, setbgcolor] = useState(
-    fulfillment === "Fulfilled"
-      ? "#39C38E"
-      : fulfillment === "Unfulfilled"
-      ? "#FEA801"
-      : "#8D39C3"
-  );
+  const [bgcolor, setbgcolor] = useState("");
+
+  //adding reference to fulfilment dropdown
   const fulfillmentSelector = useRef() as React.MutableRefObject<
     HTMLSelectElement
   >;
 
-  const setFulfillmentColor = (fulfillment: string) => {
-    switch (fulfillment) {
-      case "Fulfilled":
-        bgcode = "#39C38E";
-        break;
-      case "Unfulfilled":
-        bgcode = "#FEA801";
-        break;
-      case "Pending Receipt":
-        bgcode = "#8D39C3";
-        break;
-      default:
-        bgcode = "#39C38E";
-    }
-    setbgcolor(bgcode);
-  };
+  //callback to set fulfi
+  const setFulfillmentColor = useCallback(
+    (fulfillment: string) => {
+      switch (fulfillment) {
+        case "Fulfilled":
+          setbgcolor("#39C38E");
+          break;
+        case "Unfulfilled":
+          setbgcolor("#FEA801");
+          break;
+        case "Pending Receipt":
+          setbgcolor("#8D39C3");
+          break;
+        default:
+          setbgcolor("#39C38E");
+      }
+    },
+    [setbgcolor]
+  );
 
-  //update background and value on user selection
+  //set bg color for fulfillment
+  useEffect(() => {
+    setFulfillmentColor(fulfillment);
+  }, [setFulfillmentColor, fulfillment]);
+
+  //update fulfillment value on user selection
   const changeFulfillment = () => {
-    let selectedFulfillment = fulfillmentSelector.current.value;
+    const selectedFulfillment = fulfillmentSelector.current.value;
     setStatus(selectedFulfillment);
-    setFulfillmentColor(selectedFulfillment);
   };
 
+  //fulfillment dropdown element
   return (
     <Select
       backgroundColor={bgcolor}
@@ -154,6 +167,7 @@ const OrderRow = ({ filter }: FilterProps) => {
   const { orderData } = useData()!;
   const [filteredData, setFilteredData] = useState(orderData);
 
+  //set filter data
   useEffect(() => {
     setFilteredData(orderData);
     if (filter === "unpaid") {
