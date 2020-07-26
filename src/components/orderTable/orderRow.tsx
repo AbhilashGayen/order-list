@@ -7,6 +7,9 @@ import { DataContext } from "../../utils/dataContext";
 import { Checkbox, Select, Text, Avatar, Heading } from "@chakra-ui/core";
 import { RowContainer, Cell } from "../../styles/orderStyles";
 
+//Components
+import TableHeader from "./tableHeader";
+
 //Local Interface
 interface FilterProps {
   filter: string;
@@ -170,6 +173,7 @@ const OrderRow = ({ filter }: FilterProps) => {
 
   return (
     <>
+      <TableHeader />
       {filteredData.map((filteredName) => (
         <RowContainer key={filteredName.order_id}>
           <Cell>
@@ -189,7 +193,9 @@ const OrderRow = ({ filter }: FilterProps) => {
               src={filteredName.customer_avatar}
             />
             <Text px={1}>{filteredName.customer_first_name}</Text>
-            <Text px={1}>{filteredName.customer_last_name}</Text>
+            <Text isTruncated px={1}>
+              {filteredName.customer_last_name}
+            </Text>
           </Cell>
           <Cell>
             <FulfilmentSelector fulfillment={filteredName.fulfillment} />
@@ -203,7 +209,7 @@ const OrderRow = ({ filter }: FilterProps) => {
           <Cell>
             <StatusSelector status={filteredName.status}></StatusSelector>
           </Cell>
-          <Cell justify="flex-end">
+          <Cell>
             <DateFormatter date={filteredName.update} />
           </Cell>
         </RowContainer>
