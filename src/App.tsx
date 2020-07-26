@@ -6,15 +6,18 @@ import Header from "./components/header/header";
 
 //Pages
 import OrderPage from "./pages/order";
-import DashboardPage from "./pages/dashboard";
+import ConstructionPage from "./pages/construction";
 
 function App() {
   return (
     <>
       <Header />
       <Switch>
-        <Route exact path="/dashboard" component={DashboardPage} />
         <Route exact path="/orders" component={OrderPage} />
+        <Route exact path="/dashboard" component={ConstructionPage} />
+        <Route exact path="/customers" component={ConstructionPage} />
+        <Route exact path="/inventory" component={ConstructionPage} />
+        <Route exact path="/settings" component={ConstructionPage} />
       </Switch>
     </>
   );
