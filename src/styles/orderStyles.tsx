@@ -1,34 +1,6 @@
 //Styles
 import styled from "@emotion/styled";
-import { Flex, TabList, Tab } from "@chakra-ui/core";
-
-//Tab Styles
-export const TabHeaderContainer = styled(TabList)`
-  background: #f5f7f9;
-  color: #808998;
-  border: none;
-  border-bottom: 2px solid #bcc0c8;
-  z-index: 4;
-`;
-
-export const TabHeader = styled(Tab)`
-  background: #f5f7f9;
-  font-size: 1.3rem;
-  padding: 1rem;
-  font-weight: 400;
-  color: #808998;
-  outline: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  :hover {
-    color: #808998;
-  }
-  &:active {
-    color: #2060da;
-    outline: none;
-    border-bottom: 2px solid #2060da;
-  }
-`;
+import { Flex } from "@chakra-ui/core";
 
 //Row Styles
 export const RowContainer = styled(Flex)`
@@ -81,8 +53,45 @@ export const Cell = styled(Flex)`
 export const TableHeaderContainer = styled(RowContainer)`
   background: #f5f7f9;
   border: none;
-  padding-top: 2rem;
+  padding-top: 1rem;
   position: sticky;
-  top: 8rem;
+  top: 9rem;
   z-index: 3;
+`;
+
+//Tab Conainter
+export const TabContainer = styled(Flex)`
+  width: 100%;
+  position: sticky;
+  top: 5rem;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #f5f7f9;
+  border-bottom: 1px solid #808998;
+  margin: 1rem 0.5rem;
+  z-index: 4;
+`;
+
+//Filter container
+export const FilterConainter = styled(Flex)`
+  flex-direction: row;
+`;
+
+export const TabFilter = styled(Flex)`
+  color: #808998;
+  margin: 0.5rem 1.5rem -1px 0;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+
+  :hover {
+    color: #2060da;
+    border-bottom: 2px solid #2060da;
+  }
+  &:active {
+    color: #2060da;
+    border-bottom: 2px solid #2060da;
+  }
 `;
