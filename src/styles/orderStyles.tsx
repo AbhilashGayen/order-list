@@ -12,32 +12,40 @@ export const RowContainer = styled.div`
   background: #fff;
 
   > :nth-child(1) {
-    width: 4%;
+    min-width: 3%;
+    max-width: 3%;
   }
   > :nth-child(2) {
-    width: 10%;
+    min-width: 9%;
+    max-width: 9%;
   }
   > :nth-child(3) {
-    width: 10%;
+    min-width: 11%;
+    max-width: 11%;
   }
   > :nth-child(4) {
-    width: 18%;
+    min-width: 15%;
+    max-width: 15%;
   }
   > :nth-child(5) {
-    width: 15%;
-    margin-right: 3%;
+    min-width: 12%;
+    max-width: 12%;
   }
   > :nth-child(6) {
-    width: 9%;
+    min-width: 9%;
+    max-width: 9%;
   }
   > :nth-child(7) {
-    width: 7%;
+    min-width: 7%;
+    max-width: 7%;
   }
   > :nth-child(8) {
-    width: 12%;
+    min-width: 11%;
+    max-width: 11%;
   }
   > :nth-child(9) {
-    width: 10%;
+    min-width: 11%;
+    max-width: 11%;
     justify-content: flex-end;
   }
 `;

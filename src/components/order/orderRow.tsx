@@ -46,6 +46,7 @@ const StatusSelector = (props: any) => {
   //status dropdown element
   return (
     <Select
+      isTruncated
       backgroundColor={bgcolor}
       borderColor={bgcolor}
       color="white"
@@ -105,6 +106,7 @@ const FulfilmentSelector = (props: any) => {
   //fulfillment dropdown element
   return (
     <Select
+      isTruncated
       backgroundColor={bgcolor}
       borderColor={bgcolor}
       color="white"
@@ -152,12 +154,38 @@ const DateFormatter = (props: any) => {
   const today_yyyy: number = today.getFullYear();
   const yesterday_dd = today_dd - 1;
 
+  const monthName = (invoice_mm: number) => {
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    const month: string = months[invoice_mm - 1];
+    return month;
+  };
+
   if (invoice_yyyy === today_yyyy && invoice_mm === today_mm) {
     if (invoice_dd === today_dd) {
       date = "Today";
     } else if (invoice_dd === yesterday_dd) {
       date = "Yesterday";
+    } else {
+      const invoice_MMM = monthName(invoice_mm);
+      date = `${invoice_MMM} ${invoice_dd}, ${invoice_yyyy}`;
     }
+  } else {
+    const invoice_MMM = monthName(invoice_mm);
+    date = `${invoice_MMM} ${invoice_dd}, ${invoice_yyyy}`;
   }
 
   return <Text fontSize="lg">{date}</Text>;
@@ -199,7 +227,7 @@ const OrderRow = ({ filter }: FilterProps) => {
           <Cell>
             <Checkbox border="1px" borderRadius="md" borderColor="gray.200" />
           </Cell>
-          <Cell className="order-id">
+          <Cell>
             <InvoiceFormatter invoiceId={filteredName.order_id} />
           </Cell>
           <Cell>
@@ -207,15 +235,21 @@ const OrderRow = ({ filter }: FilterProps) => {
           </Cell>
           <Cell>
             <Avatar
-              mr={2}
               showBorder
               name={filteredName.customer_first_name}
               src={filteredName.customer_avatar}
             />
-            <Text px={1}>{filteredName.customer_first_name}</Text>
-            <Text isTruncated px={1}>
-              {filteredName.customer_last_name}
+            <Text isTruncated pl={2}>
+              {filteredName.customer_first_name +
+                " " +
+                filteredName.customer_last_name}
             </Text>
+
+            {/* <p>
+              {filteredName.customer_first_name +
+                " " +
+                filteredName.customer_last_name}
+            </p> */}
           </Cell>
           <Cell>
             <FulfilmentSelector fulfillment={filteredName.fulfillment} />
