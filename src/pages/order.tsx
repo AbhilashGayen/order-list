@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 
 //Context
 import DataContextProvider from "../utils/dataContext";
@@ -8,15 +8,21 @@ import Layout from "../components/layout";
 
 //Components
 import PageHeading from "../components/pageHeading";
-import OrderTabs from "../components/order/orderTabs";
-import Charts from "../components/chart/charts";
+
+//lazy loaded
+const OrderTabs = lazy(() => import("../components/order/orderTabs"));
+const Charts = lazy(() => import("../components/chart/charts"));
 
 const OrderPage = () => (
   <Layout>
     <PageHeading />
     <DataContextProvider>
-      <Charts />
-      <OrderTabs />
+      <Suspense fallback={<div>Loading Charts...</div>}>
+        <Charts />
+      </Suspense>
+      <Suspense fallback={<div>Loading Table...</div>}>
+        <OrderTabs />
+      </Suspense>
     </DataContextProvider>
   </Layout>
 );
