@@ -89,6 +89,7 @@ export const TabFilter = styled.div`
   font-weight: 700;
   border-bottom: 2px solid transparent;
   cursor: pointer;
+  transition: all 0.5s ease;
 
   :hover {
     color: #2060da;

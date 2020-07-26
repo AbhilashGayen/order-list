@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const ChartRow = styled.div`
   display: flex;
   width: 100%;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 `;
 
 export const ChartContainer = styled.div`
@@ -26,6 +28,10 @@ export const Data = styled.div`
 
   h3 {
     color: #808998;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   p {
     font-size: 1.5rem;
@@ -35,7 +41,6 @@ export const Data = styled.div`
 `;
 
 export const Chart = styled.div`
-  
   width: 50%;
   padding-left: 0.5rem;
   overflow: hidden;
