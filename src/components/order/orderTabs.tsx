@@ -18,17 +18,33 @@ const OrderTabs = () => {
     <>
       <TabContainer>
         <FilterConainter>
-          <TabFilter onClick={() => setFilterType("none")}>
+          <TabFilter
+            className={filterType === "none" ? " active_tab" : ""}
+            onClick={() => setFilterType("none")}
+          >
             All Orders
           </TabFilter>
-          <TabFilter onClick={() => setFilterType("none")}>Active</TabFilter>
-          <TabFilter onClick={() => setFilterType("unpaid")}>Unpaid</TabFilter>
-          <TabFilter onClick={() => setFilterType("unfulfilled")}>
+          <TabFilter
+            className={filterType === "active" ? " active_tab" : ""}
+            onClick={() => setFilterType("active")}
+          >
+            Active
+          </TabFilter>
+          <TabFilter
+            className={filterType === "unpaid" ? " active_tab" : ""}
+            onClick={() => setFilterType("unpaid")}
+          >
+            Unpaid
+          </TabFilter>
+          <TabFilter
+            className={filterType === "unfulfilled" ? " active_tab" : ""}
+            onClick={() => setFilterType("unfulfilled")}
+          >
             Unfullfilled
           </TabFilter>
         </FilterConainter>
         <FilterConainter>
-          <TabFilter  onClick={() => setFilterType("none")}>
+          <TabFilter>
             <Icon name="search" size="22px" />
           </TabFilter>
         </FilterConainter>

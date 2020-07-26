@@ -94,7 +94,7 @@ export const TabFilter = styled.div`
     color: #2060da;
     border-bottom: 2px solid #2060da;
   }
-  &:active {
+  &.active_tab {
     color: #2060da;
     border-bottom: 2px solid #2060da;
   }

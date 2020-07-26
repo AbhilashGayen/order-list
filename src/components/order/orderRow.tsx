@@ -168,6 +168,12 @@ const OrderRow = ({ filter }: FilterProps) => {
           rowdata.fulfillment.toLowerCase().includes("unfulfilled")
         )
       );
+    } else if (filter === "active") {
+      setFilteredData((f) =>
+        f.filter((rowdata) =>
+          rowdata.fulfillment.toLowerCase().includes("pending receipt")
+        )
+      );
     }
   }, [filter, orderData]);
 
