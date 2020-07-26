@@ -11,6 +11,7 @@ import {
 import OrderRow from "./orderRow";
 import { Icon } from "@chakra-ui/core";
 
+//Tabs to filter order data
 const OrderTabs = () => {
   const [filterType, setFilterType] = useState("none");
 

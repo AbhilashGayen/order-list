@@ -1,8 +1,10 @@
 import React from "react";
 
+//Styles
 import { Checkbox, Heading } from "@chakra-ui/core";
 import { TableHeaderContainer, Cell } from "../../styles/orderStyles";
 
+//Header row for order table
 const TableHeader = () => {
   return (
     <TableHeaderContainer>

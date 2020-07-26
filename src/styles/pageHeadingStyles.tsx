@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//Page Heading
 export const HeadingContainer = styled.div`
   display: flex;
   margin: 3rem 0;
@@ -7,6 +8,7 @@ export const HeadingContainer = styled.div`
   align-items: center;
 `;
 
+//Button Style
 export const Button = styled.button`
   margin-left: 1rem;
   background-color: #1e61dc;

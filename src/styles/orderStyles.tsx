@@ -42,6 +42,7 @@ export const RowContainer = styled.div`
   }
 `;
 
+//Individual Cell
 export const Cell = styled.div`
   display: flex;
   margin: 0.5rem 0.5rem;
@@ -80,6 +81,7 @@ export const FilterConainter = styled.div`
   flex-direction: row;
 `;
 
+//Individual Filter
 export const TabFilter = styled.div`
   display: flex;
   color: #808998;

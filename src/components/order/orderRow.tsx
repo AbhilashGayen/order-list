@@ -71,7 +71,7 @@ const FulfilmentSelector = (props: any) => {
     HTMLSelectElement
   >;
 
-  //callback to set fulfi
+  //callback to set fulfillment bg color
   const setFulfillmentColor = useCallback(
     (fulfillment: string) => {
       switch (fulfillment) {

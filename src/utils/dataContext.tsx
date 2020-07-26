@@ -6,8 +6,10 @@ import { OrderData } from "../data/orderData";
 //Data Model
 import { Order } from "../model/order";
 
+//Setting initial data
 const initialData: Order[] = OrderData;
 
+//Declaring interfaces/types
 type Props = {
   children: React.ReactNode;
 };
@@ -21,8 +23,11 @@ export const DataContext = createContext<DataContextType | undefined>(
   undefined
 );
 
-const DataContextProvider = ({ children }: Props) => {
+const DataContextProvider: React.FC<Props> = ({ children }) => {
+  //declare and set state for orderData
   const [orderData, setOrderData] = React.useState(initialData);
+
+  //return orderData to all children
   return (
     <DataContext.Provider value={{ orderData, setOrderData }}>
       {children}
