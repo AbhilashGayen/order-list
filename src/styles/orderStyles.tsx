@@ -4,14 +4,15 @@ import { Flex, TabList, Tab } from "@chakra-ui/core";
 
 //Tab Styles
 export const TabHeaderContainer = styled(TabList)`
-  background: transparent;
+  background: #f5f7f9;
   color: #808998;
   border: none;
-  border-bottom: 2px solid #BCC0C8;
+  border-bottom: 2px solid #bcc0c8;
+  z-index: 4;
 `;
 
 export const TabHeader = styled(Tab)`
-  background: transparent;
+  background: #f5f7f9;
   font-size: 1.3rem;
   padding: 1rem;
   font-weight: 400;
@@ -48,30 +49,40 @@ export const RowContainer = styled(Flex)`
     width: 10%;
   }
   > :nth-child(4) {
-    padding-left: 10px;
-    width: 20%;
-    justify-content: flex-start;
+    width: 18%;
   }
   > :nth-child(5) {
-    width: 14%;
+    width: 15%;
+    margin-right: 3%;
   }
   > :nth-child(6) {
-    width: 10%;
+    width: 9%;
   }
   > :nth-child(7) {
-    width: 10%;
+    width: 7%;
   }
   > :nth-child(8) {
-    width: 14%;
+    width: 12%;
   }
   > :nth-child(9) {
     width: 10%;
+    justify-content: flex-end;
   }
 `;
 
 export const Cell = styled(Flex)`
-  margin: 0.5rem 0.2rem;
-  padding: 0 0.2rem;
+  margin: 0.5rem 0.5rem;
+  padding: 0 0.3rem;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+`;
+
+//Table Header
+export const TableHeaderContainer = styled(RowContainer)`
+  background: #f5f7f9;
+  border: none;
+  padding-top: 2rem;
+  position: sticky;
+  top: 8rem;
+  z-index: 3;
 `;

@@ -7,6 +7,9 @@ export const HeaderContainer = styled(Flex)`
   background: #fff;
   height: 5rem;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 `;
 
 //Logo Container
