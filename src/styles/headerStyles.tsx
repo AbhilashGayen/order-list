@@ -1,9 +1,9 @@
+import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { Flex } from "@chakra-ui/core";
-import styled from "@emotion/styled";
 
 //Header Container
-export const HeaderContainer = styled(Flex)`
+export const HeaderContainer = styled.div`
+  display: flex;
   background: #fff;
   height: 5rem;
   width: 100%;
@@ -13,7 +13,8 @@ export const HeaderContainer = styled(Flex)`
 `;
 
 //Logo Container
-export const LogoContainer = styled(Flex)`
+export const LogoContainer = styled.div`
+  display: flex;
   width: 20%;
   padding: 1rem;
   justify-content: center;
@@ -21,14 +22,16 @@ export const LogoContainer = styled(Flex)`
 `;
 
 //Nav Container
-export const NavContainer = styled(Flex)`
+export const NavContainer = styled.div`
+  display: flex;
   width: 60%;
   padding: 1.6rem 0 0 0;
   justify-content: center;
 `;
 
 //Content container
-export const AvatarContainer = styled(Flex)`
+export const AvatarContainer = styled.div`
+  display: flex;
   width: 20%;
   padding: 1rem;
   justify-content: center;

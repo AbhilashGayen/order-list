@@ -1,13 +1,13 @@
 //Styles
-import styled from "@emotion/styled";
-import { Flex } from "@chakra-ui/core";
+import styled from "styled-components";
 
 //Row Styles
-export const RowContainer = styled(Flex)`
+export const RowContainer = styled.div`
+  display: flex;
   margin: 1rem 0.5rem;
   padding: 0.2rem 1rem;
   width: 100%;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #dde0e5;
   border-radius: 5px;
   background: #fff;
 
@@ -42,7 +42,8 @@ export const RowContainer = styled(Flex)`
   }
 `;
 
-export const Cell = styled(Flex)`
+export const Cell = styled.div`
+  display: flex;
   margin: 0.5rem 0.5rem;
   padding: 0 0.3rem;
   align-items: center;
@@ -60,24 +61,27 @@ export const TableHeaderContainer = styled(RowContainer)`
 `;
 
 //Tab Conainter
-export const TabContainer = styled(Flex)`
+export const TabContainer = styled.div`
+  display: flex;
   width: 100%;
   position: sticky;
   top: 5rem;
   flex-direction: row;
   justify-content: space-between;
   background: #f5f7f9;
-  border-bottom: 1px solid #808998;
+  border-bottom: 2px solid #dde0e5;
   margin: 1rem 0.5rem;
   z-index: 4;
 `;
 
 //Filter container
-export const FilterConainter = styled(Flex)`
+export const FilterConainter = styled.div`
+  display: flex;
   flex-direction: row;
 `;
 
-export const TabFilter = styled(Flex)`
+export const TabFilter = styled.div`
+  display: flex;
   color: #808998;
   margin: 0.5rem 1.5rem -1px 0;
   padding: 1rem 0;
