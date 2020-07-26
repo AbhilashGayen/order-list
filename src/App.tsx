@@ -14,6 +14,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/orders" component={OrderPage} />
+        <Route exact path="/" component={ConstructionPage} />
         <Route exact path="/dashboard" component={ConstructionPage} />
         <Route exact path="/customers" component={ConstructionPage} />
         <Route exact path="/inventory" component={ConstructionPage} />
