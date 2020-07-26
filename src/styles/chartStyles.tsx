@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+//Chart Styles
+
+//Chart Row Conainer
 export const ChartRow = styled.div`
   display: flex;
   width: 100%;
@@ -7,6 +10,7 @@ export const ChartRow = styled.div`
   margin-bottom: 2rem;
 `;
 
+//Individual Chart Element Container
 export const ChartContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -18,6 +22,7 @@ export const ChartContainer = styled.div`
   border-radius: 8px;
 `;
 
+//Data style for chart data
 export const Data = styled.div`
   width: 50%;
   display: flex;
@@ -40,6 +45,7 @@ export const Data = styled.div`
   }
 `;
 
+//Chart style
 export const Chart = styled.div`
   width: 50%;
   padding-left: 0.5rem;
