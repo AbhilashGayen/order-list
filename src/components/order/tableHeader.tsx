@@ -1,56 +1,24 @@
 import React from "react";
 
 //Styles
-import { Checkbox, Heading } from "@chakra-ui/core";
-import { TableHeaderContainer, Cell } from "../../styles/orderStyles";
+import { Checkbox } from "@chakra-ui/core";
+import { TableHeaderContainer } from "../../styles/orderStyles";
 
 //Header row for order table
 const TableHeader = () => {
   return (
     <TableHeaderContainer>
-      <Cell>
+      <div className="cell checkbox">
         <Checkbox border="1px" borderRadius="md" borderColor="gray.200" />
-      </Cell>
-      <Cell className="order-id">
-        <Heading as="h6" size="sm">
-          Order ID
-        </Heading>
-      </Cell>
-      <Cell>
-        <Heading as="h6" size="sm">
-          Created
-        </Heading>
-      </Cell>
-      <Cell>
-        <Heading as="h6" size="sm">
-          Customer
-        </Heading>
-      </Cell>
-      <Cell>
-        <Heading as="h6" size="sm">
-          Fulfillment
-        </Heading>
-      </Cell>
-      <Cell>
-        <Heading as="h6" size="sm">
-          Total
-        </Heading>
-      </Cell>
-      <Cell>
-        <Heading as="h6" size="sm">
-          Profit
-        </Heading>
-      </Cell>
-      <Cell>
-        <Heading as="h6" size="sm">
-          Status
-        </Heading>
-      </Cell>
-      <Cell>
-        <Heading as="h6" size="sm">
-          Updated
-        </Heading>
-      </Cell>
+      </div>
+      <div className="cell order_id">Order ID</div>
+      <div className="cell created_date">Created</div>
+      <div className="cell customer">Customer</div>
+      <div className="cell fulfillment">Fulfillment</div>
+      <div className="cell total">Total</div>
+      <div className="cell profit">Profit</div>
+      <div className="cell status">Status</div>
+      <div className="cell updated">Updated</div>
     </TableHeaderContainer>
   );
 };

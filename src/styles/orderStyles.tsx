@@ -10,53 +10,53 @@ export const RowContainer = styled.div`
   border: 2px solid #dde0e5;
   border-radius: 5px;
   background: #fff;
+  justify-content: space-evenly;
 
-  > :nth-child(1) {
+  .cell {
+    display: flex;
+    margin: 0.5rem 0.5rem;
+    padding: 0 0.2rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .checkbox {
     min-width: 3%;
     max-width: 3%;
   }
-  > :nth-child(2) {
-    min-width: 9%;
-    max-width: 9%;
+  .order_id {
+    min-width: 8%;
+    max-width: 8%;
   }
-  > :nth-child(3) {
+  .created_date {
     min-width: 11%;
     max-width: 11%;
   }
-  > :nth-child(4) {
-    min-width: 15%;
-    max-width: 15%;
+  .customer {
+    min-width: 16%;
+    max-width: 16%;
   }
-  > :nth-child(5) {
-    min-width: 12%;
-    max-width: 12%;
+  .fulfillment {
+    min-width: 14%;
+    max-width: 14%;
   }
-  > :nth-child(6) {
-    min-width: 9%;
-    max-width: 9%;
+  .total {
+    min-width: 8%;
+    max-width: 8%;
   }
-  > :nth-child(7) {
+  .profit {
     min-width: 7%;
     max-width: 7%;
   }
-  > :nth-child(8) {
-    min-width: 11%;
-    max-width: 11%;
+  .status {
+    min-width: 10%;
+    max-width: 10%;
   }
-  > :nth-child(9) {
+  .updated {
     min-width: 11%;
     max-width: 11%;
     justify-content: flex-end;
   }
-`;
-
-//Individual Cell
-export const Cell = styled.div`
-  display: flex;
-  margin: 0.5rem 0.5rem;
-  padding: 0 0.3rem;
-  align-items: center;
-  justify-content: flex-start;
 `;
 
 //Table Header
@@ -66,6 +66,9 @@ export const TableHeaderContainer = styled(RowContainer)`
   padding-top: 1rem;
   position: sticky;
   top: 9rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #232323;
   z-index: 3;
 `;
 

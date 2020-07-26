@@ -11,7 +11,7 @@ import { DataContext } from "../../utils/dataContext";
 
 //Style imports
 import { Checkbox, Select, Text, Avatar, Heading } from "@chakra-ui/core";
-import { RowContainer, Cell } from "../../styles/orderStyles";
+import { RowContainer } from "../../styles/orderStyles";
 
 //Components
 import TableHeader from "./tableHeader";
@@ -224,16 +224,16 @@ const OrderRow = ({ filter }: FilterProps) => {
       <TableHeader />
       {filteredData.map((filteredName) => (
         <RowContainer key={filteredName.order_id}>
-          <Cell>
+          <div className="cell checkbox">
             <Checkbox border="1px" borderRadius="md" borderColor="gray.200" />
-          </Cell>
-          <Cell>
+          </div>
+          <div className="cell order_id">
             <InvoiceFormatter invoiceId={filteredName.order_id} />
-          </Cell>
-          <Cell>
+          </div>
+          <div className="cell created_date">
             <DateFormatter date={filteredName.created_date} />
-          </Cell>
-          <Cell>
+          </div>
+          <div className="cell customer">
             <Avatar
               showBorder
               name={filteredName.customer_first_name}
@@ -250,22 +250,22 @@ const OrderRow = ({ filter }: FilterProps) => {
                 " " +
                 filteredName.customer_last_name}
             </p> */}
-          </Cell>
-          <Cell>
+          </div>
+          <div className="cell fulfillment">
             <FulfilmentSelector fulfillment={filteredName.fulfillment} />
-          </Cell>
-          <Cell>
+          </div>
+          <div className="cell total">
             <Text fontSize="lg">{filteredName.amount_total}</Text>
-          </Cell>
-          <Cell>
+          </div>
+          <div className="cell profit">
             <Text fontSize="lg">{filteredName.amount_profit}</Text>
-          </Cell>
-          <Cell>
+          </div>
+          <div className="cell status">
             <StatusSelector status={filteredName.status}></StatusSelector>
-          </Cell>
-          <Cell>
+          </div>
+          <div className="cell updated">
             <DateFormatter date={filteredName.update} />
-          </Cell>
+          </div>
         </RowContainer>
       ))}
     </>
